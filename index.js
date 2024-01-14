@@ -1,5 +1,5 @@
 /**
- * programmers - javascript 양식
+ * 프로그래머스 - Javascript Template
  */
 
 const readline = require('readline');
@@ -27,3 +27,19 @@ rl.on('line', function (line) {
     
     console.log(result.join(''));
 });
+
+/**
+ * function (old)
+ */
+
+function solution(slice, n) {
+  var pizza = 0;
+  var count = n;
+  while(count > 0) {
+      if(count > 0) {
+          pizza++;
+          count -= slice;
+      }
+  }
+  return pizza;
+}
