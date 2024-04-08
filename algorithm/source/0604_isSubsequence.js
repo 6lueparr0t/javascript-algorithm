@@ -4,14 +4,14 @@ function isSubsequence(str1, str2) {
     let checker = 0;
 
     while (checker < str2.length) {
-        if(holder > checker) break;
+        if(holder.length === str1.length) break;
         if (str1[holder] === str2[checker]) {
             holder++;
         }
         checker++;
     }
 
-    return str1.length === holder;
+    return str1.length === holder ? true : false;
 }
 
 console.log(isSubsequence('hello', 'hello world'));
