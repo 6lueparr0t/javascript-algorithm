@@ -3,21 +3,21 @@
 */
 
 function countUniqueValues(arr) {
-    let counter = 0;
-    let holder = 0;
-    let checker = 0;
+  let counter = 0;
+  let holder = 0;
+  let checker = 0;
 
-    while(checker < arr.length) {
-        checker++;
-        if(arr[holder] !== arr[checker] ) {
-            counter++;
-            holder++;
-        } else if (arr[holder] === arr[checker]) {
-            holder++;
-        }
+  while (checker < arr.length) {
+    checker++;
+    if (arr[holder] !== arr[checker]) {
+      counter++;
+      holder++;
+    } else if (arr[holder] === arr[checker]) {
+      holder++;
     }
+  }
 
-    return counter;
+  return counter;
 }
 
-console.log(countUniqueValues([1,2,2,5,7,7,99])); // 5
+console.log(countUniqueValues([1, 2, 2, 5, 7, 7, 99])); // 5

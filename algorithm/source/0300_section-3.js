@@ -10,10 +10,10 @@ Access - O(1)
 */
 
 let instructor = {
-    firstName: "Daehyun",
-    isInstructor: true,
-    favoriteNumbers: [1,2,3,4]
-}
+  firstName: "Daehyun",
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+};
 
 //     ◼                 ◼                     ◼
 // firstName        isInstructor        favoriteNumbers
