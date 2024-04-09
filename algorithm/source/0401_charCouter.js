@@ -1,5 +1,6 @@
 /*
 문자 세기
+https://stackoverflow.com/questions/4434076/best-way-to-alphanumeric-check-in-javascript
 */
 const charCounter = (str) => {
   const result = {};
