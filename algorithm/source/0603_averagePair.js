@@ -1,12 +1,12 @@
-function averagePair(arr, avg) {
+function averagePair(arr, num) {
   let left = 0;
   let right = arr.length - 1;
 
   while (left < right) {
-    let sum = arr[left] + arr[right];
-    if (sum / 2 === avg) {
+    let avg = (arr[left] + arr[right]) / 2;
+    if (avg === num) {
       return true;
-    } else if (sum / 2 > avg) {
+    } else if (avg > num) {
       right--;
     } else {
       left++;
