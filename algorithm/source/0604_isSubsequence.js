@@ -3,15 +3,16 @@ function isSubsequence(str1, str2) {
   let holder = 0;
   let checker = 0;
 
+  if (!str1) return true;
   while (checker < str2.length) {
-    if (holder.length === str1.length) break;
     if (str1[holder] === str2[checker]) {
       holder++;
     }
+    if (holder === str1.length) return true;
     checker++;
   }
 
-  return str1.length === holder ? true : false;
+  return false;
 }
 
 console.log(isSubsequence("hello", "hello world")); // true
