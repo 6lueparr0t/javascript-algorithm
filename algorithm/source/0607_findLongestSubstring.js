@@ -9,7 +9,7 @@ function findLongestSubstring(str) {
     if (end < str.length) {
       end++;
     } else {
-        start++;
+      start++;
     }
 
     let sliceStr = str.slice(start, end);
@@ -17,7 +17,7 @@ function findLongestSubstring(str) {
     counter = Math.max(counter, setStr.length);
 
     if (sliceStr.length > setStr.length) {
-        start++;
+      start++;
     }
   }
 
