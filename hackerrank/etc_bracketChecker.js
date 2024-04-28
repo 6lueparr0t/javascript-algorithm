@@ -2,10 +2,9 @@ function bracketChecker(str) {
   const open = ["{", "[", "("];
   const close = ["}", "]", ")"];
 
-  const result = [0, 0];
+  const result = [];
   for (let c of str) {
     if (open.includes(c)) {
-      result[0]++;
     } else if (close.includes(c)) {
       result[1]++;
     }
@@ -16,3 +15,4 @@ function bracketChecker(str) {
 
 console.log(bracketChecker("[][]{{()}}")); // true
 console.log(bracketChecker("[][]{{(}}")); // false
+console.log(bracketChecker("[][]{{(}})")); // false
