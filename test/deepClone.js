@@ -20,25 +20,25 @@ function deepClone(val) {
 let test1 = 10;
 let test2 = deepClone(test1);
 
-console.dir(test1, { depth: null });
+console.log(test1);
 test1 = 20;
-console.dir(test2, { depth: null });
+console.log(test2);
 
 // string clone
 let test_str1 = "hello World";
 let test_str2 = deepClone(test_str1);
 
-console.dir(test_str1, { depth: null });
+console.log(test_str1);
 test_str1 = "hello World2";
-console.dir(test_str2, { depth: null });
+console.log(test_str2);
 
 // array clone
 let test_arr1 = [1, 2, 3, 4];
 let test_arr2 = deepClone(test_arr1);
 
-console.dir(test_arr1, { depth: null });
+console.log(test_arr1);
 test_arr1 = [5, 6, 7, 8];
-console.dir(test_arr2, { depth: null });
+console.log(test_arr2);
 
 // object clone
 let test_obj1 = { key: { a: 1 } };
