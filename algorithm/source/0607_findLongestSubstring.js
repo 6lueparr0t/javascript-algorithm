@@ -1,6 +1,5 @@
 function findLongestSubstring(str) {
   // add whatever parameters you deem necessary - good luck!
-  let word = 0;
   let start = 0;
   let end = 0;
   let counter = 0;
