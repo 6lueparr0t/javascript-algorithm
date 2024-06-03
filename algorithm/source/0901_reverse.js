@@ -13,4 +13,10 @@ function reverse(str) {
   return result;
 }
 
+function reverse2(str) {
+  if (str.length <= 1) return str;
+  return reverse2(str.slice(1)) + str[0];
+}
+
 console.log(reverse("awesome"));
+console.log(reverse2("awesome"));
