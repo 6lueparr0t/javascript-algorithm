@@ -1,17 +1,15 @@
-function deepClone(val) {
-  if (["number", "string", "boolean"].includes(typeof val)) {
-    return val;
+function deepClone(data) {
+  if (["string", "number", "boolean"].includes(typeof data)) {
+    return data;
   } else {
-    // object, array
-    if (Array.isArray(val)) {
-      return val.map((item) => deepClone(item));
+    if (Array.isArray(data)) {
+      return data.map((item) => deepClone(item));
     } else {
-      const copy = {};
-      for (let k in val) {
-        copy[k] = deepClone(val[k]);
+      let obj = {};
+      for (let key of Object.keys(data)) {
+        obj[key] = deepClone(data[key]);
       }
-
-      return copy;
+      return obj;
     }
   }
 }
