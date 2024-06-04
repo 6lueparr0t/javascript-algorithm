@@ -9,3 +9,7 @@
 ## Main content
 
 - 프로그래머스, LeetCode, HackerRank
+
+## 참고
+
+- [Chrome shortcuts](https://developer.chrome.com/docs/devtools/shortcuts?hl=ko#sources)
