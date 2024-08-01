@@ -11,21 +11,29 @@ const rl = readline.createInterface({
 let input = [];
 // input, Ctrl+D 를 눌러 입력 종료
 rl.on("line", function (line) {
+  // input.push(line);
   input = [line];
   // output, console.log 로 출력
 }).on("close", function () {
-  str = input[0];
+  /**
+   * 예시 코드
+   */
+  try {
+    str = input[0] ?? [];
 
-  let result = [];
-  for (let x of str) {
-    if (x === x.toUpperCase()) {
-      result.push(x.toLowerCase());
-    } else {
-      result.push(x.toUpperCase());
+    let result = [];
+    for (let x of str) {
+      if (x === x.toUpperCase()) {
+        result.push(x.toLowerCase());
+      } else {
+        result.push(x.toUpperCase());
+      }
     }
+    console.log(result.join(""));
+  } catch (error) {
+    console.error(error.message);
+    process.exit();
   }
-
-  console.log(result.join(""));
 });
 
 /**
