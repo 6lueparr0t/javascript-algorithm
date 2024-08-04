@@ -1,9 +1,23 @@
-function binarySearch() {
+function binarySearch(arr, target) {
   // console.log(arguments[0]);
   // add whatever parameters you deem necessary - good luck!
+  let lo = 0;
+  let hi = arr.length - 1;
+  while (lo <= hi) {
+    let mid = Math.floor((lo + hi) / 2);
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+  }
+
+  return -1;
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5], 2)) // 1
+console.log(binarySearch([1, 2, 3,  4, 5], 2)) // 1
 console.log(binarySearch([1, 2, 3, 4, 5], 3)) // 2
 console.log(binarySearch([1, 2, 3, 4, 5], 5)) // 4
 console.log(binarySearch([1, 2, 3, 4, 5], 6)) // -1
