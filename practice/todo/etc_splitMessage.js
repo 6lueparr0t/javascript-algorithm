@@ -1,5 +1,6 @@
 /**
  * 메시지를 제한된 길이로 나누는 함수
+ * ? https://leetcode.com/problems/split-message-based-on-limit/
  *
  * @param {string} s - 나눌 메시지 문자열
  * @param {number} limit - 각 부분의 최대 길이
