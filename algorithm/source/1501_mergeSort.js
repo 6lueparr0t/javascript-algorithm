@@ -1,35 +1,41 @@
-// Merge function from earlier
-function merge(arr1, arr2) {
-  let results = [];
-  let i = 0;
-  let j = 0;
-  while (i < arr1.length && j < arr2.length) {
-    if (arr2[j] > arr1[i]) {
-      results.push(arr1[i]);
+function merge(left, right) {
+  let result = [];
+  let i=0;
+  let j=0;
+
+  while(i < left.length && j < right.length) {
+    if(left[i] < right[j]) {
+      result.push(left[i]);
       i++;
     } else {
-      results.push(arr2[j])
+      result.push(right[j]);
       j++;
     }
   }
-  while (i < arr1.length) {
-    results.push(arr1[i])
+
+  while(i < left.length) {
+    result.push(left[i]);
     i++;
   }
-  while (j < arr2.length) {
-    results.push(arr2[j])
+
+  while(j < right.length) {
+    result.push(right[j]);
     j++;
   }
-  return results;
+
+  return result;
 }
 
-// Recrusive Merge Sort
 function mergeSort(arr) {
-  if (arr.length <= 1) return arr;
+  if(arr.length <= 1) return arr;
+
   let mid = Math.floor(arr.length / 2);
   let left = mergeSort(arr.slice(0, mid));
   let right = mergeSort(arr.slice(mid));
+
   return merge(left, right);
 }
 
-console.log(mergeSort([10, 24, 76, 73]))
+let target = Array.from({length: 10}, ()=>Math.floor(Math.random() * 100));
+console.log('target : ', target);
+console.log('result : ', mergeSort(target))
