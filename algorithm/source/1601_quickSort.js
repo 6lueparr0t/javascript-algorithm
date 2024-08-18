@@ -1,7 +1,11 @@
-function pivot(arr, start = 0, end = arr.length + 1) {
+function pivot(arr, start = 0, end = arr.length) {
   const swap = (array, start, target) => {
     [array[target], array[start]] = [array[start], array[target]];
   };
+
+  // 무작위 피벗 선택
+  // const randomIndex = Math.floor(Math.random() * (end - start)) + start;
+  // swap(arr, start, randomIndex);
 
   let pivot = arr[start];
   let swapIdx = start;
@@ -32,4 +36,4 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 }
 
 console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]));
-// [2,1,3,4,8,6,7,5]
+// 예상 출력: [1, 2, 3, 4, 5, 6, 7, 8]
