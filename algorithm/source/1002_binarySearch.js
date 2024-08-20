@@ -1,3 +1,4 @@
+// 이진 검색을 사용해서 arr 에 있는 target 을 찾고, index 를 반환하는 함수
 function binarySearch(arr, target) {
   // console.log(arguments[0]);
   // add whatever parameters you deem necessary - good luck!
@@ -17,7 +18,7 @@ function binarySearch(arr, target) {
   return -1;
 }
 
-console.log(binarySearch([1, 2, 3,  4, 5], 2)) // 1
+console.log(binarySearch([1, 2, 3, 4, 5], 2)) // 1
 console.log(binarySearch([1, 2, 3, 4, 5], 3)) // 2
 console.log(binarySearch([1, 2, 3, 4, 5], 5)) // 4
 console.log(binarySearch([1, 2, 3, 4, 5], 6)) // -1
