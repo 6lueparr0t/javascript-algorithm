@@ -65,13 +65,13 @@ class SinglyLinkedList {
   }
   shift() {
     if (!this.head) return undefined;
-    let currentHead = this.head;
+    const currentHead = this.head;
     this.head = currentHead.next;
     this.length--;
     return currentHead;
   }
   unshift(val) {
-    let newNode = new Node(val);
+    const newNode = new Node(val);
 
     newNode.next = this.head;
     this.head = newNode;
