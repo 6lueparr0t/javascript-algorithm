@@ -64,7 +64,7 @@ class SinglyLinkedList {
     }
   }
   shift() {
-    if(!this.head) return undefined;
+    if (!this.head) return undefined;
     let currentHead = this.head;
     this.head = currentHead.next;
     this.length--;
@@ -72,10 +72,13 @@ class SinglyLinkedList {
   }
   unshift(val) {
     let newNode = new Node(val);
+
     newNode.next = this.head;
     this.head = newNode;
+    if (this.length === 0) this.tail = newNode;
+
     this.length++;
-    return newNode;
+    return this;
   }
 }
 
@@ -90,9 +93,7 @@ const list = new SinglyLinkedList();
 
 // console.log('after pop :');
 list.travaerse();
-console.log(list.unshift("test"));
-list.travaerse();
 console.log(list.unshift("test2"));
 list.travaerse();
-console.log(list.unshift("test3"));
+console.log(list.unshift("test3 "));
 list.travaerse();
