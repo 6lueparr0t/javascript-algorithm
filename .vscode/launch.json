@@ -2,6 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "runtimeExecutable": "/Users/6lueparr0t/.nvm/versions/node/v20.14.0/bin/node",
       "type": "node",
       "request": "launch",
       "name": "run node",
