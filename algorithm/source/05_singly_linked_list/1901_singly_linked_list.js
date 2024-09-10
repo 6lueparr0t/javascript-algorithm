@@ -27,6 +27,7 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
+
   push(val) {
     const newNode = new Node(val);
     if (!this.head) {
@@ -39,14 +40,20 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
   pop() {
     if (!this.head) return undefined;
     let current = this.head;
     let newTail = current;
+
+    // 맨 마지막 노드 검색
     while (current.next) {
       newTail = current;
       current = current.next;
     }
+
+    // newTail : 마지막 전(tail)
+    // current : 마지막
     this.tail = newTail;
     this.tail.next = null;
     this.length--;
@@ -56,13 +63,18 @@ class SinglyLinkedList {
     }
     return current;
   }
-  travaerse() {
-    let current = this.head;
-    while (current) {
-      console.log(current.data);
+
+  traverse() {
+    let idx = 1;
+    let current = this.head
+    while(current) {
+      console.log(`${idx}:`, current.data);
       current = current.next;
+      idx++;
     }
   }
+
+  // 맨 앞의 헤드를 제거함
   shift() {
     if (!this.head) return undefined;
     const currentHead = this.head;
@@ -70,8 +82,19 @@ class SinglyLinkedList {
     this.length--;
     return currentHead;
   }
+
+  // 맨 앞에 헤드에 데이터를 넣음
   unshift(val) {
     const newNode = new Node(val);
+
+    // 원래 코드
+    // if(!this.head) {
+    //   this.head = newNode;
+    //   this.tail = this.head;
+    // } else {
+    //   newNode.next = this.head;
+    //   this.head = newNode;
+    // }
 
     newNode.next = this.head;
     this.head = newNode;
@@ -88,12 +111,10 @@ const list = new SinglyLinkedList();
 // list.push("!");
 
 // console.log('before pop :');
-// list.travaerse();
+// list.traverse();
 // list.pop();
 
 // console.log('after pop :');
-list.travaerse();
 console.log(list.unshift("test2"));
-list.travaerse();
 console.log(list.unshift("test3 "));
-list.travaerse();
+list.traverse();
