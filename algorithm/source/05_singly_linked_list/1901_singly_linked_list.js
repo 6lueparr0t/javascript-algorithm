@@ -67,7 +67,7 @@ class SinglyLinkedList {
   traverse() {
     let idx = 1;
     let current = this.head
-    while(current) {
+    while (current) {
       console.log(`${idx}:`, current.data);
       current = current.next;
       idx++;
@@ -103,18 +103,38 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
+
+  set(index, value) {
+    if (index < 0 || index >= this.length) return null;
+    let foundNode = this.get(index);
+    if(foundNode) {
+      foundNode.data = value ;
+      return true;
+    }
+
+    return false;
+  }
 }
 
 const list = new SinglyLinkedList();
-// list.push("Hello");
-// list.push("Goodbye");
-// list.push("!");
+list.push("Hello");
+list.push("Goodbye");
+list.push("!");
+list.push("<3");
+list.push(":)");
 
-// console.log('before pop :');
-// list.traverse();
-// list.pop();
-
-// console.log('after pop :');
-console.log(list.unshift("test2"));
-console.log(list.unshift("test3 "));
+list.traverse();
+console.log(list.set(4, ":("));
 list.traverse();
