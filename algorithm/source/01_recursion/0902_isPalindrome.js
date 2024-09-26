@@ -20,8 +20,33 @@ function isPalindrome2(str) {
   return false;
 }
 
-console.log(isPalindrome("awesome"));
-console.log(isPalindrome("tacocat"));
+function isPalindrome3(str) {
+  // 빈도수를 저장할 객체 생성
+  const charCount = {};
 
-console.log(isPalindrome2("awesome"));
-console.log(isPalindrome2("tacocat"));
+  // 각 문자의 빈도수를 객체에 저장
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  // 홀수 개수의 문자의 수를 세기 위한 변수
+  let oddCount = 0;
+
+  let result = true;
+  // 각 문자의 빈도를 확인하여 홀수 개수가 몇 개인지 확인
+  Object.keys(charCount).map((key) => {
+    charCount[key] % 2 !== 0 && oddCount++;
+    if (oddCount > 1) result = false;
+  })
+
+  return result;
+}
+
+// console.log(isPalindrome("awesome"));
+// console.log(isPalindrome("tacocat"));
+
+// console.log(isPalindrome2("awesome"));
+// console.log(isPalindrome2("tacocat"));
+
+console.log(isPalindrome3("aabb"));
+console.log(isPalindrome3("abc"));
